@@ -1,0 +1,1 @@
+export const GET_INSTITUTE_INFO = "GET_INSTITUTE_INFO";

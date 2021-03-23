@@ -1,13 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-import Home from './components/home/Home'
-import Admin from './components/admin/adminHome'
-import { Router, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import Main from './components/home/Main'
+import Admin from './components/admin/AdminMain'
+import Welcome from './components/home/Welcome'
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Switch>
+        <Route exact path="/admin/:id" children={Admin} />
+        <Route path="/home" children={Main} />
+        <Route exact path="/" children={Welcome} />
+        
+      </Switch>
     </div>
   );
 }
