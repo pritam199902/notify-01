@@ -1,28 +1,32 @@
 import React from 'react'
-import {Switch, Route} from 'react-router-dom'
+import { Switch, Route, useRouteMatch } from 'react-router-dom'
 import Home from './AdminHome'
-import Login from './AdminLogin'
-import Register from './AdminRegister'
- 
+import Navbar from "../home/Navbar";
+// import Login from './AdminLogin'
+// import Register from './AdminRegister'
 
-function main({match}) {
-    const log =()=>{
-        console.log(match);
-    }
+
+function AdminMain() {
+    const { url, path } = useRouteMatch()
+
     return (
         <div>
-            {log()}
-            
+            {/* {console.log(url)} */}
+            <Navbar />
+
             <Switch>
-                <Route exact path="/admin/:id" children={Home} />
-                <Route exact path="/admin/login" children={Login} />
-                <Route exact path="/admin/register" children={Register} />
-
+                <Route exact path="/admin" >
+                    <Home />
+                </Route>
+                {/* <Route exact path="/admin/login" >
+                    <Login />
+                </Route>
+                <Route exact path="/admin/register" >
+                    <Register />
+                </Route> */}
             </Switch>
-
-
         </div>
     )
 }
 
-export default main
+export default AdminMain

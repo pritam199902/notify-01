@@ -1,11 +1,14 @@
-// import { GetInstituteInfo } from '../action/InstituteAction'
-// import { MyAccount } from '../main/initData'
+// Action
+import { GET_INSTITUTE } from '../action/InstituteAction'
+// Inital data
+import { InstituteData } from '../initData/data'
 
-// export const Institute = ( state = MyAccount, action)=>{
-//     switch(action.type){
-//         case UPDATE_ACCOUNT : 
-//             return state = action.payload
-//         default : 
-//             return state
-//     }
-// }
+export const InstituteReducer = ( state = InstituteData, action)=>{
+    switch(action.type){
+        case GET_INSTITUTE : 
+            return state 
+
+        default : 
+            return state
+    }
+}

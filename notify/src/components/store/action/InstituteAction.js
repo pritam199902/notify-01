@@ -1,8 +1,9 @@
-// import {GET_INSTITUTE_INFO} from './actions'
+import {GET_INFO} from './actions'
 
-// export const GetInstituteInfo = ()=>{
-//     const returnObject = {
-//         type : GET_INSTITUTE_INFO,
-//     }
-//     return returnObject;
-// }
+export const GET_INSTITUTE = ()=>{
+    const returnObject = {
+        type : GET_INFO,
+        // payload : {}
+    }
+    return returnObject;
+}

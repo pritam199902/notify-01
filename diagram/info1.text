@@ -1,0 +1,53 @@
+================
+importent notes
+================
+#Institute registration
+    Institute 
+    ---Information---
+        fullName 
+        shortName
+        logo
+        email
+        mobile
+        helpDeskEmail -multiple
+        helpDeskMobile -multiple
+    ---Address---
+        address
+        district
+        pin
+        state
+        country
+    ---Description---
+        title
+        description
+        establishedOn
+        instituteType -select -school,college,office
+        instituteTypeDescription
+    ---Department---
+        departmentTitle -exp:CSE,ECE,CE
+        departmentDescription
+        ---Section---
+            department -select department
+            sectionTitle -exp:1st,2nd,3rd,4th year
+            sectionDescription
+        -------------------------------------
+    admin registration
+        name
+        email
+        mobile
+        password
+    -------------------------------------------
+    notice section
+        noticeType
+
+        noticeId
+        noticeTypeId 
+        departmentId
+        sectionId
+        noticeTitle
+        noticeDescription
+        noticeDate
+        noticeFile
+        noticeLink
+
+        

@@ -1,14 +1,12 @@
 import { createStore, combineReducers } from "redux";
-import Notice from './NoticeReducer';
-import Section from './SectionReducer';
-import Institute from './InstituteReducer';
+// import Notice from './NoticeReducer';
+// import Section from './SectionReducer';
+import {InstituteReducer} from './InstituteReducer';
 
 
 // combine all reducer
 const all = combineReducers({
-//   Notice,
-//   Section,
-  Institute 
+  Institute: InstituteReducer
  });
 
 // create the store for globaly access

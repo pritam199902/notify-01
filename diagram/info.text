@@ -3,3 +3,14 @@ importent notes
 ================
 
 # Navbar
+
+APP
+    Welcome :  /
+        Home :  /home
+            Notice : /home/notice
+            Section : /home/section
+    
+        Admin : /admin
+            Login : /admin/login
+            Register : /admin/register
+

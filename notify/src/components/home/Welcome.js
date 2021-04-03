@@ -1,32 +1,42 @@
-import React, {useState} from "react";
-// import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
 
 function Welcome() {
+  // global data
+  const Institute = useSelector((state) => state.Institute);
+  const dispatch = useDispatch();
 
-    const [isRegistered, setIsRegistered] = useState(true)
+  // local data
+  const [isRegistered, setIsRegistered] = useState(Institute.isRegistered.flag)
+  const [goto, setGoto] = useState(false)
 
+  const Information = Institute.Information()
+  const Description = Institute.Description()
 
   const Info = () => {
     return (
       <div className="container">
         <h1
           className="m-4 text-secondary"
-          style={{ fontSize: 50, fontWeight: 500 }}
+          style={{ fontSize: 40, fontWeight: 500 }}
         >
-          Institute Name
+          {Information.fullName}
         </h1>
         <h4
           className="m-4 text-secondary"
           style={{ fontSize: 20, fontWeight: 400 }}
         >
-          Institution description
+          {Description.title}
         </h4>
         <button
           className="btn btn-info active"
           onClick={() => {
-            window.location = "/home";
+            setGoto(true)
           }}
         >
+
           <i className="fa fa-home mr-2"></i>
           Notify Home
         </button>
@@ -38,12 +48,12 @@ function Welcome() {
     return (
       <div className="container">
         <p className="text-success">
-            Please register your Institute/Office for FREE!
+          Please register your Institute/Office for FREE!
         </p>
         <button
           className="btn btn-success active"
           onClick={() => {
-            window.location = "/admin";
+            setGoto(true)
           }}
         >
           <i className="fa fa-plus mr-2"></i>
@@ -58,9 +68,13 @@ function Welcome() {
       <h1 className="m-4 text-info" style={{ fontSize: 35, fontWeight: 700 }}>
         Welcome to Notify
       </h1>
-      
+
       {isRegistered ? Info() : Registration()}
-      
+      {
+        goto ? (isRegistered ? <Redirect to="/home" /> : <Redirect to="/insreg" />) : ""
+      }
+      {/* {Info()} */}
+
     </div>
   );
 }
